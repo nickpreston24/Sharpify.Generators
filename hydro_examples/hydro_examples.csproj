@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+<!--    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">-->
+<!--&lt;!&ndash;        <Exec Command="sh ../HelloWorldSrcGen/build.sh"/>&ndash;&gt;-->
+<!--        <Exec Command="echo 'HELLO THERE!' "/>-->
+<!--    </Target>-->
+
+
+    <ItemGroup>
+        <Watch Include="**/*.cs*"/>
+        <Watch Include="img/*"/>
+        <Watch Include="js/*.js"/>
+        <Watch Include=".env"/>
+        <Watch Include="css/site.css"/>
+        <!--        <Watch Include="..\HelloWorldSrcGen\*.cs*"/>-->
+        <Watch Include="..\HelloWorldSrcGen\*.cs"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\HelloWorldSrcGen\HelloWorldSrcGen.csproj"
+                          OutputItemType="Analyzer"
+                          ReferenceOutputAssembly="false"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Hydro" Version="1.1.0"/>
+    </ItemGroup>
+
+</Project>

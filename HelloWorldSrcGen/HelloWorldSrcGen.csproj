@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+        <!--        <Exec Command="sh ../HelloWorldSrcGen/build.sh"/>-->
+        <Exec Command="echo 'HELLO THERE!' "/>
+    </Target>
+
+    <ItemGroup>
+        <PackageReference Include="CodeMechanic.Reflection" Version="1.0.4"/>
+        <PackageReference Include="CodeMechanic.Types" Version="1.0.10"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.11.0"/>
+    </ItemGroup>
+
+</Project>

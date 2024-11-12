@@ -1,0 +1,20 @@
+﻿@page
+@* @using Foo *@
+@using hydro_examples.Pages.Shared.Components
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    // HelloWorld.SayHello();
+    // string cmd = Sprocs.GetAllParts;
+
+    string cmd = Sprocs.GetAllParts;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+    <page-counter></page-counter>
+
+    <label for="">Generated SQL:</label>
+    @* <p>@cmd</p> *@
+</div>
