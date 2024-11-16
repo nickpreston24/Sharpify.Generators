@@ -1,5 +1,4 @@
 ﻿@page
-@* @using Foo *@
 @using hydro_examples.Pages.Shared.Components
 @model IndexModel
 @{
@@ -8,13 +7,37 @@
     // string cmd = Sprocs.GetAllParts;
 
     string cmd = Sprocs.GetAllParts;
+    var menu_items = Model.MenuItems;
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 
-    <page-counter></page-counter>
+    <section class="h-screen border-0 border-primary">
 
-    <label for="">Generated SQL:</label>
-    @* <p>@cmd</p> *@
+        <hydro-dashboard>
+            <slot name="left">
+                <ul class="menu bg-base-200 lg:menu-horizontal rounded-box">
+                    @foreach (var menu_item in menu_items)
+                    {
+                        <hydro-menu-item></hydro-menu-item>
+                    }
+                </ul>
+            </slot>
+            <div class="flex flex-col items-center gap-2 justify-center">
+                <page-counter></page-counter>
+                <edit-user-form></edit-user-form>
+                <clipboard></clipboard>
+                <date-picker></date-picker>
+                <hydro-modal></hydro-modal>
+            </div>
+        </hydro-dashboard>
+
+        <div id="source_generated_sql">
+            <label for="">Generated SQL:</label>
+            <p>@cmd</p>
+        </div>
+    </section>
+
+
 </div>

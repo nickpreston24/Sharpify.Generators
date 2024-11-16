@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace hydro_examples.Pages;
@@ -12,8 +11,10 @@ public class IndexModel : PageModel
         _logger = logger;
     }
 
-    public void OnGet()
+    public List<MenuItem> MenuItems { get; set; } = new List<MenuItem>()
     {
-
-    }
+        new MenuItem() { view_name = "Account" },
+        new MenuItem() { view_name = "Parts" },
+        new MenuItem() { view_name = "Aircraft" },
+    };
 }
