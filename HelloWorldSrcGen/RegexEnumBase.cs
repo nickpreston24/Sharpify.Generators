@@ -12,9 +12,9 @@ public class RegexEnumBase : Enumeration
         CompiledRegex = new Regex(
             pattern,
             RegexOptions.IgnorePatternWhitespace
-            | RegexOptions.Compiled
-            | RegexOptions.IgnoreCase
-            | RegexOptions.Multiline
+                | RegexOptions.Compiled
+                | RegexOptions.IgnoreCase
+                | RegexOptions.Multiline
         );
         this.uri = uri;
     }

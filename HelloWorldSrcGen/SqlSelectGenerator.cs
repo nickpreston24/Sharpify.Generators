@@ -18,44 +18,43 @@ public sealed class SqlSelectGenerator : IIncrementalGenerator
         {
             string cwd = Directory.GetCurrentDirectory();
 
-            var sqlfiles = new Grepper()
-            {
-                RootPath = cwd,
-                FileSearchMask = "*.sql"
-            }.GetFileNames().ToList();
+            var sqlfiles = new Grepper() { RootPath = cwd, FileSearchMask = "*.sql" }
+                .GetFileNames()
+                .ToList();
 
-            if (sqlfiles.Count == 0) throw new Exception("OOOPs no files.");
+            if (sqlfiles.Count == 0)
+                throw new Exception("OOOPs no files.");
 
             Console.WriteLine("results :>> " + sqlfiles.Count);
 
-//             foreach (var file_path in sqlfiles)
-//             {
-//                 string text = File.ReadAllText(file_path);
-//                 string file_name = Path.GetFileNameWithoutExtension(file_path);
-//
-//                 string source_text = $$"""
-//                                        namespace hydro_examples
-//                                        {
-//                                            public static class Sprocs
-//                                            {
-//                                                    public static string GetAllParts = "select * from todos";
-//                                            }
-//                                        }
-//                                        """;
-//
-//                 ctx.AddSource($"sprocs.g", SourceText.From(source_text, Encoding.UTF8));
-//             }
+            //             foreach (var file_path in sqlfiles)
+            //             {
+            //                 string text = File.ReadAllText(file_path);
+            //                 string file_name = Path.GetFileNameWithoutExtension(file_path);
+            //
+            //                 string source_text = $$"""
+            //                                        namespace hydro_examples
+            //                                        {
+            //                                            public static class Sprocs
+            //                                            {
+            //                                                    public static string GetAllParts = "select * from todos";
+            //                                            }
+            //                                        }
+            //                                        """;
+            //
+            //                 ctx.AddSource($"sprocs.g", SourceText.From(source_text, Encoding.UTF8));
+            //             }
 
 
             string source_text = $$"""
-                                   namespace Foo
-                                   {
-                                       public static class Sprocs
-                                       {
-                                               public static string GetAllParts = "select * from todos";
-                                       }
-                                   }
-                                   """;
+            namespace Foo
+            {
+                public static class Sprocs
+                {
+                        public static string GetAllParts = "select * from todos";
+                }
+            }
+            """;
 
             ctx.AddSource("sprocs.g", SourceText.From(source_text, Encoding.UTF8));
         });
@@ -64,7 +63,5 @@ public sealed class SqlSelectGenerator : IIncrementalGenerator
 
 public record DotEnv
 {
-    public static void Load()
-    {
-    }
+    public static void Load() { }
 }
