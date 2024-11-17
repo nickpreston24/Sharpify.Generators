@@ -25,10 +25,16 @@
                 </ul>
             </slot>
             <div class="flex flex-col items-center gap-2 justify-center">
-                <page-counter></page-counter>
+
+                <card title="Counter Example">
+                    @* <slot name="title"> *@
+                    @*     <h1>Counter example</h1> *@
+                    @* </slot> *@
+                    <page-counter></page-counter>
+                </card>
                 <edit-user-form></edit-user-form>
                 <clipboard></clipboard>
-                <date-picker></date-picker>
+                <hydro-date-picker></hydro-date-picker>
                 <hydro-modal></hydro-modal>
             </div>
         </hydro-dashboard>
