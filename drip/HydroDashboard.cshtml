@@ -1,0 +1,10 @@
+@model HydroDashboard
+
+<section class="grid grid-cols-6 border-0 border-red-500 bg-neutral-100 min-h-32">
+    <div id="left" class="col-span-1 bg-neutral-200 border-primary border-0 flex flex-col items-center justify-center">
+        @Model.Slot("left")
+    </div>
+    <div class="col-span-5">
+        @Model.Slot()
+    </div>
+</section>

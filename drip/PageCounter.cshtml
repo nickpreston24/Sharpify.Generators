@@ -1,0 +1,8 @@
+@model PageCounter
+
+<div>
+    Count: <strong>@Model.Count</strong>
+    <button on:click="@(() => Model.Add())">
+        Add
+    </button>
+</div>
