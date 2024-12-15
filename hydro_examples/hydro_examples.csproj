@@ -31,10 +31,10 @@
         <PackageReference Include="Hydro" Version="1.1.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="Pages\Shared\Components\obj\Components.csproj.nuget.dgspec.json" />
-      <_ContentIncludedByDefault Remove="Pages\Shared\Components\obj\project.assets.json" />
-      <_ContentIncludedByDefault Remove="Pages\Shared\Components\obj\Release\net8.0\Components.sourcelink.json" />
-    </ItemGroup>
+<!--    <ItemGroup>-->
+<!--      <_ContentIncludedByDefault Remove="Pages\Shared\Components\obj\Components.csproj.nuget.dgspec.json" />-->
+<!--      <_ContentIncludedByDefault Remove="Pages\Shared\Components\obj\project.assets.json" />-->
+<!--      <_ContentIncludedByDefault Remove="Pages\Shared\Components\obj\Release\net8.0\Components.sourcelink.json" />-->
+<!--    </ItemGroup>-->
 
 </Project>

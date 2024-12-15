@@ -5,6 +5,10 @@
         @Model.Slot("left")
     </div>
     <div class="col-span-5">
-        @Model.Slot()
+        @* @Model.Slot() *@
+        @foreach (var item in Model.Items)
+        {
+            item.ToString();
+        }
     </div>
 </section>
